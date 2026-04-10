@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mF71Q-gozuPW5.woff2")
+    format("woff2");
+  font-display: swap;
+  font-weight: 300 700;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHQ.woff2")
+    format("woff2");
+  font-display: swap;
+  font-weight: 300 700;
+}
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "DM Sans";
+    --font-mono: "Courier New", monospace;
+    --radius: 0.25rem;
+
+    --background: 0.06 0 0;
+    --foreground: 0.92 0 0;
+    --card: 0.11 0 0;
+    --card-foreground: 0.92 0 0;
+    --popover: 0.11 0 0;
+    --popover-foreground: 0.92 0 0;
+
+    --primary: 0.68 0.22 248;
+    --primary-foreground: 0.06 0 0;
+
+    --secondary: 0.18 0 0;
+    --secondary-foreground: 0.8 0 0;
+    --muted: 0.18 0 0;
+    --muted-foreground: 0.52 0 0;
+
+    --accent: 0.68 0.22 248;
+    --accent-foreground: 0.06 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.9 0 0;
+
+    --border: 0.22 0 0;
+    --input: 0.22 0 0;
+    --ring: 0.68 0.22 248;
+
+    --chart-1: 0.68 0.22 248;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.11 0 0;
+    --sidebar-foreground: 0.92 0 0;
+    --sidebar-primary: 0.68 0.22 248;
+    --sidebar-primary-foreground: 0.06 0 0;
+    --sidebar-accent: 0.18 0 0;
+    --sidebar-accent-foreground: 0.8 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.68 0.22 248;
+  }
+
+  .dark {
+    --background: 0.06 0 0;
+    --foreground: 0.92 0 0;
+    --card: 0.11 0 0;
+    --card-foreground: 0.92 0 0;
+    --popover: 0.11 0 0;
+    --popover-foreground: 0.92 0 0;
+
+    --primary: 0.68 0.22 248;
+    --primary-foreground: 0.06 0 0;
+
+    --secondary: 0.18 0 0;
+    --secondary-foreground: 0.8 0 0;
+    --muted: 0.18 0 0;
+    --muted-foreground: 0.52 0 0;
+
+    --accent: 0.68 0.22 248;
+    --accent-foreground: 0.06 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.9 0 0;
+
+    --border: 0.22 0 0;
+    --input: 0.22 0 0;
+    --ring: 0.68 0.22 248;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-hero {
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground font-display;
+    line-height: 0.95;
+  }
+
+  .text-section-heading {
+    @apply text-3xl md:text-4xl font-bold tracking-tight text-foreground font-display;
+  }
+
+  .text-section-label {
+    @apply text-xs font-semibold tracking-[0.2em] uppercase text-accent font-display;
+  }
+
+  .accent-underline {
+    @apply relative inline-block pb-1;
+  }
+
+  .accent-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-[2px] bg-accent origin-left scale-x-0 transition-transform duration-300;
+  }
+
+  .accent-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  .card-border {
+    @apply border border-border bg-card;
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 1px 3px 0 oklch(0 0 0 / 0.4);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 4px 24px 0 oklch(0.68 0.22 248 / 0.08), 0 1px 4px 0
+      oklch(0 0 0 / 0.3);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px oklch(0.68 0.22 248 / 0.15);
+  }
+
+  .section-alt {
+    @apply bg-card;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 accent-underline;
+  }
+}

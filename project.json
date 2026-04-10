@@ -1,0 +1,23 @@
+{
+  "overview": "A personal portfolio website for Aditi Jadhav — aspiring software developer and first-year CS student. Features a hero section, about bio, skills showcase, goals, education timeline, and contact links, all styled in a sleek OLED black and sky blue color palette.",
+  "features": [
+    "Hero section with name, tagline, and Contact Me button",
+    "About section with personal narrative",
+    "Skills showcase with core strengths and technical skills",
+    "Goals section with four key objectives",
+    "Education timeline",
+    "Contact section with email, LinkedIn, and GitHub links",
+    "Sticky navigation with smooth scroll",
+    "Fully responsive design for mobile, tablet, and desktop",
+    "OLED black and sky blue color palette"
+  ],
+  "category": "showcase",
+  "tags": [
+    "portfolio",
+    "personal",
+    "developer",
+    "student",
+    "showcase"
+  ],
+  "last_updated": "2026-04-10T20:39:28.736Z"
+}
